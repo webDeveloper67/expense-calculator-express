@@ -1,0 +1,3 @@
+{
+	"mongoURI": "mongodb+srv://mondeveloper:mondeveloper@expense-project-ajdqm.mongodb.net/test?retryWrites=true&w=majority"
+}
