@@ -17,6 +17,7 @@ import {Provider} from 'react-redux';
 import store from './store';
 
 import setAuthToken from './utils/setAuthToken';
+import PrivateRoute from './components/routing/PrivateRoute';
 
 if (localStorage.token) {
 	setAuthToken(localStorage.token);

@@ -1,4 +1,5 @@
 import React, {Fragment, useEffect} from 'react';
+import ExpenseItem from './ExpenseItem';
 import {connect} from 'react-redux';
 import {getExpenses} from '../../actions/expense';
 
@@ -9,9 +10,7 @@ const Expenses = ({expense: {expenses}, getExpenses}) => {
 	return (
 		<div className="ui container">
 			{expenses.map(expense =>
-				<h3>
-					{expense.charge}
-				</h3>
+				<ExpenseItem key={expense._id} expense={expense} />
 			)}
 		</div>
 	);

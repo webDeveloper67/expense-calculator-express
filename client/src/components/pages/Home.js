@@ -2,6 +2,7 @@ import React, {useEffect} from 'react';
 import {connect} from 'react-redux';
 import {loadUser} from '../../actions/verify';
 import Expenses from '../expenses/Expenses';
+import ExpenseForm from '../expenses/ExpenseForm';
 
 const Home = ({loadUser}) => {
 	useEffect(() => {
@@ -9,6 +10,7 @@ const Home = ({loadUser}) => {
 	}, []);
 	return (
 		<div>
+			<ExpenseForm />
 			<Expenses />
 		</div>
 	);
