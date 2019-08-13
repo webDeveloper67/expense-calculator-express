@@ -60,7 +60,9 @@ const ExpenseForm = ({
 	return (
 		<div>
 			<form className="ui form" onSubmit={handleOnSubmit}>
-				<h4 className="ui dividing header">Expenses Information</h4>
+				<h4 style={{color: 'purple'}} className="ui dividing header">
+					Expenses Information
+				</h4>
 				<div className="field">
 					<label htmlFor="charge">Charge</label>
 					<input
@@ -81,7 +83,9 @@ const ExpenseForm = ({
 						onChange={handleOnChange}
 					/>
 				</div>
-				<h4 className="ui dividing header">Expense Type</h4>
+				<h4 style={{color: 'purple'}} className="ui dividing header">
+					Expense Type
+				</h4>
 				<div className="field">
 					<div className="ui radio checked">
 						<input
@@ -113,9 +117,10 @@ const ExpenseForm = ({
 						value={current ? 'Update Expense' : 'Add Expense'}
 					/>
 				</div>
+				<div className="ui hidden divider" />
 				{current &&
 					<div>
-						<button className="ui grey button" onClick={clearAll}>
+						<button className="ui blue button" onClick={clearAll}>
 							Clear
 						</button>
 					</div>}

@@ -82,7 +82,8 @@ const SignUp = props => {
 						onChange={handleOnChange}
 					/>
 				</div>
-				<input type="submit" value="Sign Up" />
+				<div className="ui hidden divider" />
+				<input type="submit" value="Sign Up" className="ui purple button" />
 			</form>
 		</div>
 	);

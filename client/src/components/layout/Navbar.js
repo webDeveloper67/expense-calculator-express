@@ -11,8 +11,8 @@ const Navbar = ({isAuth, user, logout}) => {
 
 	const verifyLinks = (
 		<Fragment>
-			<Link to="/profile" className="ui item blue header">
-				Hello: {user && user.name}
+			<Link to="/profile" className="item blue">
+				Hello: <strong style={{color: 'red'}}>{user && user.name}</strong>
 			</Link>
 			<Link to="/about" className="item">
 				About Us

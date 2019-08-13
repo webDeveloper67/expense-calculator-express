@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import {connect} from 'react-redux';
 import {
 	deleteExpense,
@@ -19,44 +19,48 @@ const ExpenseItem = ({
 		clearCurrentExpense();
 	};
 	return (
-		<div className="ui cards">
-			<div className="card">
-				<div className="content">
+		<Fragment>
+			<div className="ui hidden divider" />
+			<div className="ui cards">
+				<div className="card">
 					<div className="content">
-						{amount &&
-							<span className="right floated">
-								${amount}
-							</span>}
-						{charge &&
-							<strong>
-								{' '}<span>{charge}</span>
-							</strong>}
-					</div>
-					<div className="ui divided selection list">
-						<div
-							className={
-								'ui horizontal label ' + (type === 'family' ? 'red' : 'purple')
-							}
-						>
-							{type.charAt(0).toUpperCase() + type.slice(1)}
+						<div className="content">
+							{amount &&
+								<span className="right floated">
+									${amount}
+								</span>}
+							{charge &&
+								<strong>
+									{' '}<span>{charge}</span>
+								</strong>}
 						</div>
-					</div>
-					<div className="extra content">
-						<div className="ui two buttons">
+						<div className="ui divided selection list">
 							<div
-								className="ui basic green button"
-								onClick={() => setCurrentExpense(expense)}
+								className={
+									'ui horizontal label ' +
+									(type === 'family' ? 'red' : 'purple')
+								}
 							>
-								Edit
+								{type.charAt(0).toUpperCase() + type.slice(1)}
 							</div>
-							<div className="ui basic red button" onClick={handleOnDelete}>
-								Delete
+						</div>
+						<div className="extra content">
+							<div className="ui two buttons">
+								<div
+									className="ui basic green button"
+									onClick={() => setCurrentExpense(expense)}
+								>
+									Edit
+								</div>
+								<div className="ui basic red button" onClick={handleOnDelete}>
+									Delete
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-		</div>
+		</Fragment>
 	);
 };
 
