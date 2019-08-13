@@ -47,8 +47,13 @@ router.post(
 			await user.save();
 
 			// Send back to user
+			const payload = {
+				user: {
+					id: user.id
+				}
+			};
 			jwt.sign(
-				{user: {id: user.id}},
+				payload,
 				config.get('jwtSecret'),
 				{
 					expiresIn: 3600000
