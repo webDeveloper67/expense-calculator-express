@@ -1,13 +1,8 @@
-import React, {useEffect} from 'react';
-import {connect} from 'react-redux';
-import {loadUser} from '../../actions/verify';
+import React from 'react';
 import Expenses from '../expenses/Expenses';
 import ExpenseForm from '../expenses/ExpenseForm';
 
 const Home = ({loadUser}) => {
-	useEffect(() => {
-		loadUser();
-	}, []);
 	return (
 		<div>
 			<ExpenseForm />
@@ -16,4 +11,4 @@ const Home = ({loadUser}) => {
 	);
 };
 
-export default connect(null, {loadUser})(Home);
+export default Home;

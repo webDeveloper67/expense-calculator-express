@@ -23,6 +23,7 @@ const SignIn = props => {
 				clearErrors();
 			}
 		},
+		// eslint-disable-next-line
 		[error, isAuth, props.history]
 	);
 

@@ -5,8 +5,7 @@ import {
 	DELETE_EXPENSE,
 	UPDATE_EXPENSE,
 	SET_CURRENT,
-	CLEAR_CURRENT,
-	CLEAR_EXPENSES
+	CLEAR_CURRENT
 } from './types';
 
 import axios from 'axios';

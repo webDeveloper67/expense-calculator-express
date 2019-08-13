@@ -1,4 +1,4 @@
-import React, {Fragment} from 'react';
+import React, {Fragment, useEffect} from 'react';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import './App.css';
 
@@ -18,12 +18,16 @@ import store from './store';
 
 import setAuthToken from './utils/setAuthToken';
 import PrivateRoute from './components/routing/PrivateRoute';
+import {loadUser} from './actions/verify';
 
 if (localStorage.token) {
 	setAuthToken(localStorage.token);
 }
 
 const App = () => {
+	useEffect(() => {
+		store.dispatch(loadUser());
+	});
 	return (
 		<Provider store={store}>
 			<Router>
@@ -33,8 +37,8 @@ const App = () => {
 					<div className="ui container">
 						<Alert />
 						<Switch>
-							<Route exact path="/home" component={Home} />
-							<Route exact path="/about" component={About} />
+							<PrivateRoute exact path="/home" component={Home} />
+							<PrivateRoute exact path="/about" component={About} />
 							<Route exact path="/signup" component={SignUp} />
 							<Route exact path="/signin" component={SignIn} />
 						</Switch>
